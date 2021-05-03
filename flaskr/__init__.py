@@ -1,7 +1,7 @@
 import os
 
 from flask import Flask
-import script as sp
+import app as sp
 
 def create_app(test_config=None):
     # create and configure the app
