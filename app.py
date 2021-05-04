@@ -1,29 +1,13 @@
-import pureautomatism as pa
-import random
+# app.py
+from flask import Flask, request, jsonify
+import script as sp
+app = Flask(__name__)
 
-def getscript():
-    cast = pa.Cast()
-    cast.makeCast()
+# A welcome message to test our server
+@app.route('/')
+def index():
+    return sp.getscript()
 
-    s = ""
-
-    cast.makeScene()
-    s += "Act 1:<br/>"
-    s += (pa.Scene()).get(cast) + "<br/>"
-    for i in range(random.randrange(3,9)):
-        s += (pa.Line()).get(cast) + "<br/>" 
-    s += "<i>All exit.</i><br/>"
-
-    s += "<br/>Act 2:"
-    s += (pa.Scene()).get(cast) + "<br/>"
-    for i in range(random.randrange(3,9)):
-        s += (pa.Line()).get(cast) + "<br/>"
-    s += "<i>All exit.</i><br/>"
-
-    s += "<br/>Act 3:<br/>"
-    s += (pa.Scene()).get(cast) + "<br/>"
-    for i in range(random.randrange(3,9)):
-        s += (pa.Line()).get(cast) + "<br/>"
-    s += "<i>All bow, and exit.</i><br/>"
-
-    return s
+if __name__ == '__main__':
+    # Threaded option to enable multiple instances for multiple user access support
+    app.run(threaded=True, port=5000)
