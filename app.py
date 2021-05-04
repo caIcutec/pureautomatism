@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 # A welcome message to test our server
 @app.route('/')
-def index():
+def app():
     return sp.getscript()
 
 if __name__ == '__main__':
