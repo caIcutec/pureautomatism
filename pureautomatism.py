@@ -45,7 +45,8 @@ class Dialogue:
         s = []
         s.append(Subject().get() + " will " + Action().get() + " the " + Object().get() + ".")
         s.append("A " + Entity().get() + " should " + Action().get() + " the " + Object().get() + ".")
-        s.append(Subject().getExis() + " a " + Entity().get() + ".")
+        s.append(Subject().getExis() + " like a " + Entity().get() + ".")
+        s.append(Entity().get() + "is like a " + Entity().get() + ".")
         s.append("How do the " + Entity().get() + "s " + Action().get() + "?")
         s.append("Can the " + Entity().get() + "s " + Action().get() + " the " + Entity().get() + "?")
         pick = random.randrange(0,5)
